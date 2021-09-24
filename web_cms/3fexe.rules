@@ -1,0 +1,5 @@
+# Created by WatcherLAB on 2019-03-07.
+# Copyright © 2019 WatcherLAB. All rights reserved.
+
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type 3Fexe Shell"; flow:established,from_client; content:".:: 3fexe Shell ::."; content:".:: Smart.Shell 1.0"; metadata:created_at 2019_03_07; sid:80000001; rev:1; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type 3Fexe Shell"; flow:established,from_client; content:"action=download&file="; content:"o.GET.o"; content:"o.REN.o"; content:"o.DEL.o"; content:"o.VIEW.o"; content:"o.EDIT.o"; metadata:created_at 2019_03_07; sid:80000002; rev:1; classtype:web-attack;)

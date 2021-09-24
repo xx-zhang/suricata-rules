@@ -1,0 +1,7 @@
+# Created by WatcherLAB on 2019-03-07.
+# Copyright © 2019 WatcherLAB. All rights reserved.
+
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type Remote Explorer Shell"; flow:established,from_client; content:"<title>Remote Explorer</title>"; metadata:created_at 2019_03_07; sid:80000019; rev:1; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type Remote Explorer Shell"; flow:established,from_client; content:"FolderPath"; content:"Address:"; content:"Name"; content:"Size"; content:"Type"; content:"Modified"; content:"Attributes"; content:"CopyFile="; content:"CopyFolder="; content:"&FolderPath="; metadata:created_at 2019_03_07; sid:80000020; rev:1; classtype:web-attack; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type Remote Explorer Shell"; flow:established,from_client; content:"FolderPath"; content:"Address:"; content:"Name"; content:"Size"; content:"Type"; content:"Modified"; content:"Attributes"; content:"CopyFile="; content:"CopyFolder="; content:"&FolderPath="; content:"FolderPath"; metadata:created_at 2019_03_07; sid:80000041; rev:1; classtype:web-attack;)
+

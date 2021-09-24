@@ -1,0 +1,6 @@
+# Created by WatcherLAB on 2019-03-07.
+# Copyright © 2019 WatcherLAB. All rights reserved.
+
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type ASPsh Shell"; flow:established,from_client; content:"<TITLE>ASPsh"; content:"loading..."; metadata:created_at 2019_03_07; sid:80000003; rev:1; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type ASPsh Shell"; flow:established,from_client; content:"gbLoaded"; content:"goTitle"; content:"goUploadFrom"; content:"goDownloadButton"; content:"gsCwd"; content:"giTimeout"; metadata:created_at 2019_03_07; sid:80000004; rev:1; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type ASPsh Shell"; flow:established,from_client; content:"getXML(asData)"; content:"body_onload()"; content:"body_onkeydown()"; content:"addHistory()"; content:"goHistory(iMove)"; content:"HTMLencode(sText)"; metadata:created_at 2019_03_07; sid:80000005; rev:1; classtype:web-attack;)

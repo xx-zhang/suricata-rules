@@ -1,0 +1,8 @@
+# Created by WatcherLAB on 2019-03-07.
+# Copyright © 2019 WatcherLAB. All rights reserved.
+
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type ASP_KIT_LIST Shell"; flow:established,from_client; content:"ASP_KIT"; content:"list.asp"; content:"modified"; metadata:created_at 2019_03_07; sid:80000013; rev:1; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type ASP_KIT_LIST Shell"; flow:established,from_client; content:"method="; content:"<h3>PATH:"; content:"type=1&file="; content:"type=2&file="; metadata:created_at 2019_03_07; sid:80000014; rev:1; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type ASP_KIT_LIST Shell"; flow:established,from_client; content:"method="; content:"<h3>PATH:"; content:"type=1&file="; content:"type=2&file="; content:"type"; content:"file"; metadata:created_at 2019_03_07; sid:80000037; rev:1; classtype:web-attack;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"Detection Webshell, Type ASP_KIT_LIST Shell"; flow:established,from_client; content:"method="; content:"<h3>PATH:"; content:"type=1&file="; content:"type=2&file="; content:"file"; content:"type"; metadata:created_at 2019_03_07; sid:80000038; rev:1; classtype:web-attack;)
+
